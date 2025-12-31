@@ -11,15 +11,17 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<leader>e', ':Neotree toggle<CR>', desc = 'NeoTree toggle', silent = true },
+    --  nice but currently conflicting with format buffer binding
+    --  { '<leader>f', ':Neotree reveal<CR>', desc = 'NeoTree reveal file', silent = true },
   },
-  opts = {
-    filesystem = {
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
-        },
-      },
-    },
-  },
+  --   opts = {
+  --     filesystem = {
+  --       window = {
+  --         mappings = {
+  --           ['\\'] = 'close_window',
+  --         },
+  --       },
+  --     },
+  --   },
 }
