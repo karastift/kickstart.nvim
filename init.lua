@@ -127,6 +127,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+vim.keymap.set('n', '<leader>qq', '<cmd>qa<CR>', { desc = 'Quit Neovim' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -855,6 +857,10 @@ require('lazy').setup({
       statusline.section_location = function()
         return '%2l:%-2v'
       end
+
+      vim.keymap.set('n', '<leader>bd', function()
+        require('mini.bufremove').delete(0, false)
+      end, { desc = 'Delete buffer' })
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
